@@ -55,7 +55,7 @@ export class ApiService {
 
   login(data: any): Observable<any> {
     return this.http
-      .post('https://toughts-mongoose.onrender.com/auth/login', data)
+      .post('https://toughts-mongoose.onrender.com/login', data)
       .pipe(
         tap((response: any) => {
           localStorage.setItem('token', response.token);

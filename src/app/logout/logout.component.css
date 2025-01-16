@@ -1,0 +1,19 @@
+.button-style {
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-style:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.button-style:active {
+  transform: scale(0.95);
+}

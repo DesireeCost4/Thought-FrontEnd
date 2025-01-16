@@ -1,0 +1,13 @@
+<form (ngSubmit)="getNewTought()">
+  <div class="input-group">
+    <textarea
+      name="title"
+      id="title"
+      [(ngModel)]="postData.title"
+      placeholder="Digite o conteúdo"
+      required
+    ></textarea>
+  </div>
+
+  <button type="submit" class="btn-submit">Postar</button>
+</form>

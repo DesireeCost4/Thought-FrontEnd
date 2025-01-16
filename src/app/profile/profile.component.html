@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="profile-header">
+    <img src="icons8-nome-48.png" alt="Avatar" />
+
+    <h1>{{ name }}</h1>
+    <p>Bem-vindo ao seu perfil!</p>
+    <p class="email">Email: {{ email }}</p>
+    <p class="date">Membro desde: {{ createdAt | date : "dd/MM/yyyy" }}</p>
+  </div>
+
+  <div *ngIf="toughts.length > 0">
+    <div *ngFor="let tought of toughts">
+      <div class="tought-block">
+        <div class="post-header">
+          <img src="icons8-nome-48.png" alt="Avatar" />
+          <div class="username">{{ name }}</div>
+          <div class="timestamp">{{ createdAt }}</div>
+        </div>
+
+        <div class="post-content">
+          <h3>{{ tought.title }}</h3>
+          <p>{{ tought.content }}</p>
+        </div>
+
+        <div class="post-footer">
+          <div class="like-button">Curtir</div>
+          <div class="action-button">Comentar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="toughts.length === 0">
+    <p>Não há pensamentos disponíveis.</p>
+  </div>
+</div>

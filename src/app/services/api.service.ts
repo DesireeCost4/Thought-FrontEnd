@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000/';
+  private apiUrl = 'https://toughts-mongoose.onrender.com/';
 
   private feedDataSubject = new BehaviorSubject<any[]>([]); // Inicializando com um array vazio
   feedData$ = this.feedDataSubject.asObservable();
@@ -39,7 +39,7 @@ export class ApiService {
     const token = localStorage.getItem('auth_token');
     if (token) {
       this.http
-        .get<any[]>('http://localhost:3000/toughts/dashboard', {
+        .get<any[]>('https://toughts-mongoose.onrender.com/toughts/dashboard', {
           headers: { Authorization: `Bearer ${token}` },
         })
         .subscribe(

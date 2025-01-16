@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'https://toughts-mongoose.onrender.com/';
+  private apiUrl = 'http://localhost:3000/';
 
   private feedDataSubject = new BehaviorSubject<any[]>([]); // Inicializando com um array vazio
   feedData$ = this.feedDataSubject.asObservable();
@@ -22,7 +22,7 @@ export class ApiService {
     const token =
       localStorage.getItem('token') || sessionStorage.getItem('token');
     if (!token) {
-      window.location.href = '/login';
+      window.location.href = '/login'; // Redirecionar para o login caso não tenha token
       return false;
     }
     return true;
@@ -39,7 +39,7 @@ export class ApiService {
     const token = localStorage.getItem('auth_token');
     if (token) {
       this.http
-        .get<any[]>('https://toughts-mongoose.onrender.com/toughts/dashboard', {
+        .get<any[]>('http://localhost:3000/toughts/dashboard', {
           headers: { Authorization: `Bearer ${token}` },
         })
         .subscribe(
@@ -54,14 +54,12 @@ export class ApiService {
   }
 
   login(data: any): Observable<any> {
-    return this.http
-      .post('https://toughts-mongoose.onrender.com/login', data)
-      .pipe(
-        tap((response: any) => {
-          localStorage.setItem('token', response.token);
-          console.log('Token salvo:', response.token); // Log para verificar o token salvo
-        })
-      );
+    return this.http.post('https://thougths-api.onrender.com/login', data).pipe(
+      tap((response: any) => {
+        localStorage.setItem('token', response.token);
+        console.log('Token salvo:', response.token); // Log para verificar o token salvo
+      })
+    );
   }
 
   postNewtought(data: any): Observable<any> {

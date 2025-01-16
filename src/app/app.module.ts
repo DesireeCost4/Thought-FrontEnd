@@ -12,8 +12,10 @@ import { MainComponent } from './main/main.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { InputPostComponent } from './input-post/input-post.component'; // Importando o módulo necessário
 import { LogoutComponent } from './logout/logout.component';
-
 import { RouterModule } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { RouterModule } from '@angular/router';
     NavBarComponent,
     InputPostComponent,
     LogoutComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([]),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

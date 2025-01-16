@@ -1,15 +1,20 @@
 <nav id="navbar">
-  <a href="/" id="logo">
-    <img src="/img/toughts_logo.png" alt="" />
+  <ul>
+    <li *ngIf="isLoggedIn()" @fadeInOut>
+      <a routerLink="/feed">Home</a>
+    </li>
+    <li *ngIf="isLoggedIn()" @fadeInOut>
+      <a routerLink="/profile">Perfil</a>
+    </li>
+    <li *ngIf="isLoggedIn()" @fadeInOut>
+      <app-logout></app-logout>
+    </li>
 
-    <ul>
-      <li><a href="/feed">Home</a></li>
-
-      <li><a href="/profile">Perfil</a></li>
-      <li><app-logout></app-logout></li>
-
-      <li><a href="/login">Entrar</a></li>
-      <li><a href="/register">Registrar</a></li>
-    </ul>
-  </a>
+    <li *ngIf="!isLoggedIn()" @fadeInOut>
+      <a routerLink="/login">Entrar</a>
+    </li>
+    <li *ngIf="!isLoggedIn()" @fadeInOut>
+      <a routerLink="/register">Cadastrar-se</a>
+    </li>
+  </ul>
 </nav>

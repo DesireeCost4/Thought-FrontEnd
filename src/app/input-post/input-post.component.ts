@@ -32,7 +32,7 @@ export class InputPostComponent {
       };
 
       this.http
-        .post<any>('http://localhost:3000/toughts/add', postData, {
+        .post<any>('https://toughtapi.onrender.com/toughts/add', postData, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -44,7 +44,6 @@ export class InputPostComponent {
           },
           (error) => {
             console.error('Erro ao criar pensamento:', error);
-            // Aqui você pode tratar os erros da criação do pensamento
           }
         );
     }

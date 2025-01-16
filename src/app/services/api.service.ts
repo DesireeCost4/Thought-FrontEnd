@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000/';
+  private apiUrl = 'https://toughtapi.onrender.com/';
 
   private feedDataSubject = new BehaviorSubject<any[]>([]); // Inicializando com um array vazio
   feedData$ = this.feedDataSubject.asObservable();
@@ -18,14 +19,14 @@ export class ApiService {
     return localStorage.getItem('token') || '';
   }
 
+  isLoggedIn(): boolean {
+    return !!this.getToken();
+  }
+
   checkAuthentication(): boolean {
-    const token =
-      localStorage.getItem('token') || sessionStorage.getItem('token');
-    if (!token) {
-      window.location.href = '/login'; // Redirecionar para o login caso não tenha token
-      return false;
-    }
-    return true;
+    const token = this.getToken();
+    console.log('Token encontrado:', token);
+    return token !== null && token !== '';
   }
 
   private getAuthHeaders(): HttpHeaders {
@@ -39,7 +40,7 @@ export class ApiService {
     const token = localStorage.getItem('auth_token');
     if (token) {
       this.http
-        .get<any[]>('http://localhost:3000/toughts/dashboard', {
+        .get<any[]>('https://toughtapi.onrender.com/toughts/dashboard', {
           headers: { Authorization: `Bearer ${token}` },
         })
         .subscribe(
@@ -54,19 +55,28 @@ export class ApiService {
   }
 
   login(data: any): Observable<any> {
-    return this.http.post('https://thougths-api.onrender.com/login', data).pipe(
-      tap((response: any) => {
-        localStorage.setItem('token', response.token);
-        console.log('Token salvo:', response.token); // Log para verificar o token salvo
-      })
-    );
+    return this.http
+      .post('https://toughtapi.onrender.com/auth/login', data)
+      .pipe(
+        tap((response: any) => {
+          localStorage.setItem('token', response.token);
+          console.log('Token salvo:', response.token);
+        })
+      );
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
+    console.log('Token removido. Usuário deslogado.');
+    window.location.href = '/login';
   }
 
   postNewtought(data: any): Observable<any> {
     return this.http.post('http://localhost:3000/toughts/add', data).pipe(
       tap((response: any) => {
         localStorage.setItem('auth_token', response.token);
-        console.log('Token salvo:', response.token); // Log para verificar o token salvo
+        console.log('Token salvo:', response.token);
       })
     );
   }

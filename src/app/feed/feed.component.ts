@@ -53,11 +53,14 @@ export class FeedComponent implements OnInit {
 
     if (token) {
       this.http
-        .get<DashboardResponse>('http://localhost:3000/toughts/dashboard', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
+        .get<DashboardResponse>(
+          'https://toughtapi.onrender.com/toughts/dashboard',
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
         .subscribe(
           (response) => {
             console.log('Dashboard:', response);
@@ -91,7 +94,7 @@ export class FeedComponent implements OnInit {
     console.log('Tentando deletar pensamento com ID:', id);
 
     this.http
-      .delete(`http://localhost:3000/toughts/remove/${id}`, {
+      .delete(`https://toughtapi.onrender.com/toughts/remove/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },

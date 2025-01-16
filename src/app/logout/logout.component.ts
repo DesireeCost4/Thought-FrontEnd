@@ -13,14 +13,16 @@ export class LogoutComponent {
 
   logout(): void {
     this.http
-      .get('http://localhost:3000/auth/logout', { responseType: 'json' })
+      .get('https://toughtapi.onrender.com/auth/logout', {
+        responseType: 'json',
+      })
       .subscribe({
         next: (response) => {
           console.log('Resposta do backend:', response);
-          localStorage.removeItem('token'); // Remover o token
-          sessionStorage.removeItem('token'); // Remover o token da sessão
+          localStorage.removeItem('token');
+          sessionStorage.removeItem('token');
 
-          this.router.navigate(['/login']); // Redireciona para o login usando o Router
+          this.router.navigate(['/login']);
         },
         error: (err) => {
           console.error('Erro ao fazer logout', err);

@@ -1,10 +1,4 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { ApiService } from '../services/api.service'; // Certifique-se de ter um serviço API
-import { ActivatedRoute } from '@angular/router';
-import { Route } from '@angular/router';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -28,17 +22,20 @@ export class ProfileComponent {
 
   getDashboard(): void {
     // Pega o token do localStorage
-    const token = localStorage.getItem('auth_token'); // 'auth_token' é a chave que você usa para armazenar o token
+    const token = localStorage.getItem('auth_token');
 
     console.log('feed token: ' + token);
 
     if (token) {
       this.http
-        .get<DashboardResponse>('http://localhost:3000/toughts/profile', {
-          headers: {
-            Authorization: `Bearer ${token}`, // Envia o token no cabeçalho
-          },
-        })
+        .get<DashboardResponse>(
+          'https://toughtapi.onrender.com/toughts/profile',
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
         .subscribe(
           (response) => {
             console.log('Dashboard:', response);
@@ -57,7 +54,6 @@ export class ProfileComponent {
   }
 }
 
-// Definindo a interface dentro do mesmo arquivo
 interface DashboardResponse {
   toughts: Array<any>;
   emptyToughts: boolean;

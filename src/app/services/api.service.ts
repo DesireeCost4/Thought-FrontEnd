@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'https://toughts-mongoose.onrender.com/';
+  private apiUrl = 'http://localhost:3000/';
 
   private feedDataSubject = new BehaviorSubject<any[]>([]); // Inicializando com um array vazio
   feedData$ = this.feedDataSubject.asObservable();

@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000/';
+  private apiUrl = 'https://toughts-mongoose.onrender.com/';
 
   private feedDataSubject = new BehaviorSubject<any[]>([]); // Inicializando com um array vazio
   feedData$ = this.feedDataSubject.asObservable();
@@ -54,12 +54,14 @@ export class ApiService {
   }
 
   login(data: any): Observable<any> {
-    return this.http.post('http://localhost:3000/auth/login', data).pipe(
-      tap((response: any) => {
-        localStorage.setItem('token', response.token);
-        console.log('Token salvo:', response.token); // Log para verificar o token salvo
-      })
-    );
+    return this.http
+      .post('https://toughts-mongoose.onrender.com/auth/login', data)
+      .pipe(
+        tap((response: any) => {
+          localStorage.setItem('token', response.token);
+          console.log('Token salvo:', response.token); // Log para verificar o token salvo
+        })
+      );
   }
 
   postNewtought(data: any): Observable<any> {

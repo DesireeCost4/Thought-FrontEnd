@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+.container ul li {
+  padding: 10px;
+  align-items: center;
+}
+
+.container ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
+}
+
+.container ul li a:hover {
+  background-color: #555;
+  border-radius: 5px;
+  transform: scale(1.05);
+}

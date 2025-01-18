@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AsidebarLeftComponent } from './asidebar-left/asidebar-left.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InputPostComponent,
     LogoutComponent,
     RegisterComponent,
+    AsidebarLeftComponent,
   ],
   imports: [
     BrowserModule,

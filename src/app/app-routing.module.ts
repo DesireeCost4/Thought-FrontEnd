@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'asidebar-left', component: RegisterComponent },
 
   { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
   { path: 'feed', component: FeedComponent, canActivate: [authGuard] },

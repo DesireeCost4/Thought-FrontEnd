@@ -6,7 +6,7 @@
     <li *ngIf="isLoggedIn()" @fadeInOut>
       <a routerLink="/profile">Perfil</a>
     </li>
-    <li *ngIf="isLoggedIn()" @fadeInOut>
+    <li class="logout" *ngIf="isLoggedIn()" @fadeInOut>
       <app-logout></app-logout>
     </li>
 

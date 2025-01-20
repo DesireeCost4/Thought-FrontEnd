@@ -44,6 +44,18 @@
   transform: scale(1.05);
 }
 
+.logout {
+  background-color: #555;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
+.logout:hover {
+  background-color: #555;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
 /* Estilo responsivo */
 @media (max-width: 768px) {
   #navbar ul {

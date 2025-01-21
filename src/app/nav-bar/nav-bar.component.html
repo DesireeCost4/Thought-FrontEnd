@@ -1,15 +1,5 @@
-<nav id="navbar">
+<nav id="navbar" *ngIf="!isLoggedIn()" @fadeInOut>
   <ul>
-    <li *ngIf="isLoggedIn()" @fadeInOut>
-      <a routerLink="/feed">Home</a>
-    </li>
-    <li *ngIf="isLoggedIn()" @fadeInOut>
-      <a routerLink="/profile">Perfil</a>
-    </li>
-    <li class="logout" *ngIf="isLoggedIn()" @fadeInOut>
-      <app-logout></app-logout>
-    </li>
-
     <li *ngIf="!isLoggedIn()" @fadeInOut>
       <a routerLink="/login">Entrar</a>
     </li>

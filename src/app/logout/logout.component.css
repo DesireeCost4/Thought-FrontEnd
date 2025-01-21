@@ -4,16 +4,20 @@
   background-color: transparent;
   padding: 5px 10px;
   border: none;
-  border-radius: 5px;
+
+  border-radius: 100px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button-style:hover {
   background-color: #555;
+  color: #dc3545;
+
   transform: scale(1.05);
 }
 
 .button-style:active {
+  color: #dc3545;
   transform: scale(0.95);
 }

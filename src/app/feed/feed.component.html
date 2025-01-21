@@ -1,39 +1,49 @@
-<div class="container">
-  <div>
-    <app-input-post></app-input-post>
+<div class="feed-grid">
+  <div class="first-colum">
+    <app-asidebar-left></app-asidebar-left>
   </div>
 
-  <div *ngFor="let tought of allToughts" class="post">
-    <div class="post-header">
-      <img src="icons8-nome-48.png" alt="Avatar" />
-      <div class="username">{{ tought.userId.name }}</div>
-      <div class="timestamp">{{ tought.createdAt | date : "short" }}</div>
+  <div class="container">
+    <div>
+      <app-input-post></app-input-post>
+    </div>
 
-      <div class="dropdown">
-        <button class="dropdown-button" (click)="toggleDropdown(tought._id)">
-          ⋮
-        </button>
-        <div class="dropdown-menu" *ngIf="dropdownOpen === tought._id">
-          <button (click)="editTought(tought._id)">Editar</button>
-          <button (click)="removeTought(tought._id)">Apagar</button>
+    <div *ngFor="let tought of allToughts" class="post">
+      <div class="post-header">
+        <img src="icons8-nome-48.png" alt="Avatar" />
+        <div class="username">{{ tought.userId.name }}</div>
+        <div class="timestamp">{{ tought.createdAt | date : "short" }}</div>
+
+        <div class="dropdown">
+          <button class="dropdown-button" (click)="toggleDropdown(tought._id)">
+            ⋮
+          </button>
+          <div class="dropdown-menu" *ngIf="dropdownOpen === tought._id">
+            <button (click)="editTought(tought._id)">Editar</button>
+            <button (click)="removeTought(tought._id)">Apagar</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div>
-      <h3>{{ tought.title }}</h3>
-      <p>{{ tought.content }}</p>
-    </div>
+      <div>
+        <h3>{{ tought.title }}</h3>
+        <p>{{ tought.content }}</p>
+      </div>
 
-    <div class="post-footer">
-      <div class="action-button">Curtir</div>
-      <div class="deslike-button">Não curti!</div>
-      <div class="action-button">Comentar</div>
-      <div class="action-button">Compartilhar</div>
+      <div class="post-footer">
+        <div class="action-button">Curtir</div>
+        <div class="deslike-button">Não curti!</div>
+        <div class="action-button">Comentar</div>
+        <div class="action-button">Compartilhar</div>
+      </div>
     </div>
   </div>
-</div>
 
-<div *ngIf="allToughts.length === 0">
-  <p>Não há pensamentos disponíveis.</p>
+  <div *ngIf="allToughts.length === 0">
+    <p>Não há pensamentos disponíveis.</p>
+  </div>
+
+  <div class="third-column">
+    <!-- Espaço reservado para o app-asidebar-right -->
+  </div>
 </div>

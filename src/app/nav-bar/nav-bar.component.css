@@ -44,14 +44,14 @@
   transform: scale(1.05);
 }
 
-.logout {
-  background-color: #555;
+app-logout {
   border-radius: 5px;
   transform: scale(1.05);
 }
 
 .logout:hover {
   background-color: #555;
+
   border-radius: 5px;
   transform: scale(1.05);
 }

@@ -21,6 +21,8 @@
 
 .third-column {
   grid-column: 3;
+  padding: 20px;
+  margin-right: 300px;
 }
 
 .container app-input-post {
@@ -36,8 +38,9 @@
 }
 
 .post {
-  background-color: #000;
-  border: 1px solid #f2d335;
+  background: linear-gradient(135deg, #121212, #444444);
+
+  border: 1px solid #c69a1b;
 
   color: #fcfcfc;
   margin-bottom: 20px;

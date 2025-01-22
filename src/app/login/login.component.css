@@ -67,7 +67,7 @@ h2 {
   font-weight: bold;
   width: 70%;
   padding: 1rem;
-  background-color: #f9ed32;
+  background: linear-gradient(45deg, #d4af37, #ffc700, #805a1a);
   color: #000;
   border: none;
   border-radius: 15px;
@@ -76,7 +76,8 @@ h2 {
 }
 
 .btn:hover {
-  background-color: #f2d335;
+  background: linear-gradient(45deg, #ffc700, #805a1a, #d4af37);
+  transform: scale(1.05);
 }
 
 /* .footer */
@@ -96,7 +97,8 @@ h2 {
 }
 
 .footer a:hover {
-  background-color: #f2d335;
+  background: linear-gradient(45deg, #d4af37, #ffc700, #805a1a);
+
   border-radius: 5px;
   color: #000;
 }

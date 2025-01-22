@@ -1,5 +1,15 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { faHome, faHeart } from '@fortawesome/free-solid-svg-icons';
+
+import {
+  faUser,
+  faComment,
+  faSignOutAlt,
+  faCommentAlt,
+} from '@fortawesome/free-solid-svg-icons';
+
+import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 
 @Component({
   selector: 'app-asidebar-left',
@@ -9,6 +19,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './asidebar-left.component.css',
 })
 export class AsidebarLeftComponent {
+  faHome = faHome;
+  faHeart = faHeart;
+  faCommentAlt: IconDefinition = faCommentAlt;
+  faUser = faUser;
+  faComment = faComment;
+  faSignOutAlt = faSignOutAlt;
+
   name: string = '';
   email: string = '';
   createdAt: string = '';

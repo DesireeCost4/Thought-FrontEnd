@@ -1,5 +1,5 @@
 .container {
-  background-color: #000;
+  background: linear-gradient(135deg, #121212, #444444);
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -9,7 +9,7 @@
 }
 
 form {
-  background-color: #000;
+  background: linear-gradient(135deg, #121212, #444444);
   border: 1px solid #f2d335;
 
   padding: 1.5rem;
@@ -28,10 +28,9 @@ textarea {
   width: 97%;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
   font-size: 16px;
   resize: none;
-  background-color: #000;
+  background: transparent;
   color: #fcfcfc;
   border: none;
 }
@@ -40,11 +39,12 @@ textarea:focus {
   border: none;
   outline: none;
   border-color: #f9ed32;
+  background: linear-gradient(135deg, #121212, #444444);
 }
 
 .btn-submit {
   padding: 10px 20px;
-  background-color: #f9ed32;
+  background: linear-gradient(45deg, #d4af37, #ffc700, #805a1a);
   color: #000;
   border: none;
   border-radius: 5px;
@@ -53,7 +53,8 @@ textarea:focus {
 }
 
 .btn-submit:hover {
-  background-color: #f2d335;
+  background: linear-gradient(45deg, #ffc700, #805a1a, #d4af37);
+  transform: scale(1.05);
 }
 
 .container h2 {

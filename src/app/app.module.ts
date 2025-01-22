@@ -17,6 +17,8 @@ import { RegisterComponent } from './register/register.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AsidebarLeftComponent } from './asidebar-left/asidebar-left.component';
+import { SearchComponent } from './search/search.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { AsidebarLeftComponent } from './asidebar-left/asidebar-left.component';
     LogoutComponent,
     RegisterComponent,
     AsidebarLeftComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { AsidebarLeftComponent } from './asidebar-left/asidebar-left.component';
     HttpClientModule,
     RouterModule.forRoot([]),
     BrowserAnimationsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

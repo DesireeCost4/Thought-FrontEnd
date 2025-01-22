@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-common-types'; // Adicione isso para tipagem
 
 @Component({
   selector: 'app-logout',
@@ -9,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './logout.component.css',
 })
 export class LogoutComponent {
+  faSignOutAlt: IconDefinition = faSignOutAlt;
   constructor(private http: HttpClient, private router: Router) {}
 
   logout(): void {

@@ -7,10 +7,18 @@
     </a>
     <ul>
       <li>
-        <a routerLink="/feed">Home</a>
+        <a [routerLink]="['/feed']">
+          <fa-icon [icon]="faHome"></fa-icon> Home
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="['/profile']">
+          <fa-icon [icon]="faUser"></fa-icon> Perfil
+        </a>
       </li>
       <li>
-        <a routerLink="/profile">Perfil</a>
+        <a> <fa-icon [icon]="faCommentAlt"></fa-icon> Recados </a>
       </li>
 
       <li><app-logout></app-logout></li>

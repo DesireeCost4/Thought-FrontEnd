@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto;
   gap: 20px;
-  padding: 20px;
+  
   height: 100vh;
   box-sizing: border-box;
 }
@@ -21,7 +21,7 @@
 
 .third-column {
   grid-column: 3;
-  padding: 20px;
+ 
 }
 
 .container app-input-post {
@@ -33,7 +33,7 @@
 }
 .container {
   margin: 0 auto;
-  padding: 20px;
+  padding: 0;
 }
 
 .post {

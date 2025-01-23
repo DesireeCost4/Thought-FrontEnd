@@ -1,10 +1,29 @@
-<form action="" method="get">
-  <div class="input-group">
-    <input
-      type="text"
-      name="search"
-      class="search-bar"
-      placeholder="Oque está buscando?"
-    />
-  </div>
-</form>
+<div class="input-group">
+  <input
+    type="text"
+    name="search"
+    class="search-bar"
+    [(ngModel)]="searchQuery"
+    (input)="onSearchInputChange()"
+    placeholder="Pesquisar pensamentos..."
+  />
+</div>
+
+<div *ngIf="toughtsQty === 0 && searchQuery.trim() !== ''" class="no-results">
+  <p>Nenhum pensamento encontrado para a busca "{{ searchQuery }}"</p>
+</div>
+
+<div *ngIf="toughtsQty > 0" class="results">
+  <h2>Resultados ({{ toughtsQty }})</h2>
+  <ul class="tought-list">
+    <li *ngFor="let tought of toughts" class="tought-item">
+      <strong class="tought-title">{{ tought.title }}</strong>
+      <span class="tought-author"
+        >Criado por Criado por
+        <a class="profile-a" routerLink="/profile">{{
+          tought.userId?.name
+        }}</a></span
+      >
+    </li>
+  </ul>
+</div>

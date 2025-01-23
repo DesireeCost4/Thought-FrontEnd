@@ -1,58 +1,57 @@
-.container {
+.profile-header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   background: linear-gradient(135deg, #121212, #444444);
-  border-radius: 10px;
-  padding: 50px;
-  width: 10rem;
-  margin-left: 25rem;
-  margin-top: 1rem;
-  border-right: 1px solid #c69a1b;
-  border-left: 1px solid #c69a1b;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
 }
 
-.profile-header {
-  width: 200px;
+.profile-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
 
-.profile-header > h1 {
-  color: #fff;
-  width: 200px;
-}
-
-.profile-h1 {
-  text-decoration: none;
+.profile-header h1 {
+  font-size: 24px;
+  margin: 0 0 10px;
   color: #fff;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.list-options {
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
 }
 
-.container ul li {
+.list-options li {
+  margin-bottom: 10px;
   align-items: center;
   padding: 10px;
 }
 
-.container ul li a {
+.list-options a {
   text-decoration: none;
+  color: #fff;
   font-size: 22px;
-  color: white;
-  padding: 5px 10px;
-  transition: background-color 0.3s ease;
+
+  display: flex;
+  align-items: center;
 }
 
-.container ul li a:hover {
+.list-options a:hover {
   background: linear-gradient(45deg, #d4af37, #ffc700, #805a1a);
-  transform: scale(1.05);
   color: #000;
   border-radius: 100px;
-  transform: scale(1.05);
+
+
 }
 
-app-logout {
-  margin-right: 10px;
+.list-options fa-icon {
+  margin-right: 8px; 
 }

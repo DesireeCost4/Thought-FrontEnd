@@ -1,27 +1,34 @@
-<div class="container">
-  <div class="profile-header">
-    <a class="profile-h1" routerLink="/profile">
-      <img src="icons8-nome-48.png" alt="Avatar" />
+<div class="profile-header">
+  <img src="icons8-nome-48.png" alt="Avatar" />
 
-      <h1>{{ name }}</h1>
-    </a>
-    <ul>
-      <li>
-        <a [routerLink]="['/feed']">
-          <fa-icon [icon]="faHome"></fa-icon> Home
-        </a>
-      </li>
+  <h1>
+    
+    {{ name }}
+  </h1>
 
-      <li>
-        <a routerLink="['/profile']">
-          <fa-icon [icon]="faUser"></fa-icon> Perfil
-        </a>
-      </li>
-      <li>
-        <a> <fa-icon [icon]="faCommentAlt"></fa-icon> Recados </a>
-      </li>
 
-      <li><app-logout></app-logout></li>
-    </ul>
-  </div>
+  <ul class="list-options">
+    <li>
+      <a [routerLink]="['/feed']">
+        <fa-icon [icon]="faHome"></fa-icon> Home
+      </a>
+    </li>
+
+    <li>
+      <a [routerLink]="['/profile']">
+        <fa-icon [icon]="faUser"></fa-icon> Perfil
+      </a>
+    </li>
+
+    <li>
+      <a> <fa-icon [icon]="faCommentAlt"></fa-icon> Recados </a>
+    </li>
+
+    <li>
+      <a> <fa-icon [icon]="faCommentAlt"></fa-icon> Depoimentos </a>
+    </li>
+
+    <li><app-logout></app-logout></li>
+  </ul>
 </div>
+

@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { faHome, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 import {
   faUser,
   faComment,
   faSignOutAlt,
   faCommentAlt,
+  faHome,
+  faHeart,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
@@ -19,6 +20,7 @@ import { IconDefinition } from '@fortawesome/fontawesome-common-types';
   styleUrl: './asidebar-left.component.css',
 })
 export class AsidebarLeftComponent {
+  //icons
   faHome = faHome;
   faHeart = faHeart;
   faCommentAlt: IconDefinition = faCommentAlt;
@@ -26,6 +28,7 @@ export class AsidebarLeftComponent {
   faComment = faComment;
   faSignOutAlt = faSignOutAlt;
 
+  //lógica
   name: string = '';
   email: string = '';
   createdAt: string = '';

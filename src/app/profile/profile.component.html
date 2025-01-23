@@ -2,10 +2,37 @@
   <div class="profile-header">
     <img src="icons8-nome-48.png" alt="Avatar" />
 
-    <h1>{{ name }}</h1>
-    <p>Bem-vindo ao seu perfil!</p>
+    <h1>
+      Bem vindo(a)
+      <br />
+      {{ name }}
+    </h1>
     <p class="email">Email: {{ email }}</p>
     <p class="date">Membro desde: {{ createdAt | date : "dd/MM/yyyy" }}</p>
+
+    <ul class="list-options">
+      <li>
+        <a [routerLink]="['/feed']">
+          <fa-icon [icon]="faHome"></fa-icon> Home
+        </a>
+      </li>
+
+      <li>
+        <a [routerLink]="['/profile']">
+          <fa-icon [icon]="faUser"></fa-icon> Perfil
+        </a>
+      </li>
+
+      <li>
+        <a> <fa-icon [icon]="faCommentAlt"></fa-icon> Recados </a>
+      </li>
+
+      <li>
+        <a> <fa-icon [icon]="faCommentAlt"></fa-icon> Depoimentos </a>
+      </li>
+
+      <li><app-logout></app-logout></li>
+    </ul>
   </div>
 
   <div *ngIf="toughts.length > 0">

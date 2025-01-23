@@ -1,6 +1,6 @@
 .feed-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto;
   gap: 20px;
   padding: 20px;
@@ -10,8 +10,8 @@
 
 .first-column {
   grid-column: 1;
-
   overflow: hidden;
+  
 }
 
 .feed-container {
@@ -22,7 +22,6 @@
 .third-column {
   grid-column: 3;
   padding: 20px;
-  margin-right: 300px;
 }
 
 .container app-input-post {

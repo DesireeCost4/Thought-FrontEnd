@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
@@ -85,5 +85,13 @@ export class ApiService {
     return this.http.delete(`${this.apiUrl}toughts/remove/${toughtId}`, {
       headers: this.getAuthHeaders(), // Chama o método que já gera os cabeçalhos com o token
     });
+  }
+
+  searchTought(search: string = '', order: string = 'desc'): Observable<any> {
+    const token = localStorage.getItem('token'); // Obtém o token armazenado
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); // Define o cabeçalho Authorization
+    const params = new HttpParams().set('search', search).set('order', order);
+
+    return this.http.get(`http://localhost:3000/toughts`, { headers, params });
   }
 }

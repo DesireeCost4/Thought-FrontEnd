@@ -38,10 +38,8 @@ export class ProfileComponent {
   }
 
   getDashboard(): void {
-    // Pega o token do localStorage
     const token = localStorage.getItem('auth_token');
 
-    console.log('feed token: ' + token);
 
     if (token) {
       this.http
@@ -62,7 +60,6 @@ export class ProfileComponent {
               (this.createdAt = response.createdAt);
           },
           (error) => {
-            console.error('Erro ao acessar a dashboard:', error); // Manipule o erro
           }
         );
     } else {

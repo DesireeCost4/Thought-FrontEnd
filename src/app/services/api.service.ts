@@ -4,13 +4,14 @@ import { Observable, tap } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
+
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
   private apiUrl = 'https://toughtapi.onrender.com/';
 
-  private feedDataSubject = new BehaviorSubject<any[]>([]); // Inicializando com um array vazio
+  private feedDataSubject = new BehaviorSubject<any[]>([]); 
   feedData$ = this.feedDataSubject.asObservable();
 
   constructor(private http: HttpClient) {}
@@ -25,7 +26,6 @@ export class ApiService {
 
   checkAuthentication(): boolean {
     const token = this.getToken();
-    console.log('Token encontrado:', token);
     return token !== null && token !== '';
   }
 
@@ -36,7 +36,7 @@ export class ApiService {
     });
   }
 
-  updateFeed() {
+  updateFeed(): void {
     const token = localStorage.getItem('auth_token');
     if (token) {
       this.http
@@ -45,14 +45,15 @@ export class ApiService {
         })
         .subscribe(
           (data) => {
-            this.feedDataSubject.next(data);
+            console.log('Feed atualizado com sucesso:', data);
+            this.feedDataSubject.next(data);  // Atualiza o feed
           },
           (error) => {
-            console.error('Erro ao carregar feed:', error);
+            console.error('Erro ao atualizar feed:', error);
           }
         );
-    }
-  }
+    }}
+
 
   login(data: any): Observable<any> {
     return this.http

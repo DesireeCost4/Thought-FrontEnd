@@ -16,7 +16,6 @@ export class InputPostComponent {
   constructor(private http: HttpClient, private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.getNewTought();
   }
 
   getNewTought() {

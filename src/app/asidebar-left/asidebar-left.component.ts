@@ -42,7 +42,6 @@ export class AsidebarLeftComponent {
   getDashboard(): void {
     const token = localStorage.getItem('auth_token');
 
-    console.log('feed token: ' + token);
 
     if (token) {
       this.http
@@ -56,14 +55,13 @@ export class AsidebarLeftComponent {
         )
         .subscribe(
           (response) => {
-            console.log('Dashboard:', response);
 
             this.name = response.name;
             (this.email = response.email),
               (this.createdAt = response.createdAt);
           },
           (error) => {
-            console.error('Erro ao acessar a dashboard:', error); // Manipule o erro
+            console.error('Erro ao acessar a dashboard:', error); 
           }
         );
     } else {

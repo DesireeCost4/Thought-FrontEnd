@@ -4,12 +4,10 @@
   align-items: center;
   text-align: center;
   background: linear-gradient(135deg, #121212, #444444);
-  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-left:1px solid #d4af37;
-  border-right:1px solid #d4af37;
-  
+  border-left: 1px solid #f2d335;
+  border-right: 1px solid #f2d335;
 }
 
 .profile-header img {
@@ -40,7 +38,7 @@
 .list-options a {
   text-decoration: none;
   color: #fff;
-  font-size: 22px;
+  font-size: 18px;
 
   display: flex;
   align-items: center;

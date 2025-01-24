@@ -3,7 +3,8 @@
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto;
   gap: 20px;
-  
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 100vh;
   box-sizing: border-box;
 }
@@ -228,23 +229,3 @@
   font-size: 20px;
 }
 
-.post-footer {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  color: #555;
-}
-.post-footer .action-button {
-  cursor: pointer;
-  color: #007bff;
-  transition: color 0.3s;
-}
-.post-footer .action-button:hover {
-  color: #0056b3;
-}
-.deslike-button {
-  color: #dc3545;
-}
-.deslike-button:hover {
-  color: #bd2130;
-}

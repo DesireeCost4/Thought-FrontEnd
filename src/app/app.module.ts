@@ -19,6 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AsidebarLeftComponent } from './asidebar-left/asidebar-left.component';
 import { SearchComponent } from './search/search.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { VideoPlayerComponent } from './video-player/video-player.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RegisterComponent,
     AsidebarLeftComponent,
     SearchComponent,
+    VideoPlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RouterModule.forRoot([]),
     BrowserAnimationsModule,
     FontAwesomeModule,
+    YouTubePlayerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

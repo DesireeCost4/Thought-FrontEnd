@@ -1,14 +1,12 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
-  grid-gap: 20px;
-  max-width: 1200px; /* Largura máxima do container */
-  margin: 0 auto; 
-  padding: 20px;
-  background-color: transparent;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #fff;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 .profile-header {
@@ -17,9 +15,11 @@
   align-items: center;
   text-align: center;
   background: linear-gradient(135deg, #121212, #444444);
-  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 1px solid #f2d335;
+  border-right: 1px solid #f2d335;
+  height: 35rem;
 }
 
 .profile-header img {
@@ -32,22 +32,24 @@
 .profile-header h1 {
   font-size: 24px;
   margin: 0 0 10px;
+  color: #fff;
 }
 
-.tought-block {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  background: linear-gradient(135deg, #121212, #444444);
+.profile-header p {
+  margin: 0 0 10px;
   color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+}
+
+.profile-header p:hover {
+  color: #000;
+  background-color: #c69a1b;
 }
 
 .list-options {
   list-style: none;
-  padding: 0; 
-  margin: 0; }
+  padding: 0;
+  margin: 0;
+}
 
 .list-options li {
   margin-bottom: 10px;
@@ -58,23 +60,34 @@
 .list-options a {
   text-decoration: none;
   color: #fff;
-  font-size: 22px;
-
+  font-size: 18px;
   display: flex;
   align-items: center;
 }
 
 .list-options a:hover {
   background: linear-gradient(45deg, #d4af37, #ffc700, #805a1a);
-  transform: scale(1.05);
   color: #000;
   border-radius: 100px;
-
-  padding: 2px;
 }
 
 .list-options fa-icon {
-  margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+  margin-right: 8px;
+}
+
+app-logout {
+  margin-right: 10px;
+}
+
+
+.tought-block {
+  background: linear-gradient(135deg, #121212, #444444);
+  border: 1px solid #c69a1b;
+  color: #fcfcfc;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .post-header {
@@ -88,11 +101,18 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  margin-right: 10px;
 }
 
 .post-header .username {
   font-weight: bold;
   margin-left: 10px;
+}
+
+.post-header .timestamp {
+  color: #888;
+  font-size: 0.9rem;
+  margin-left: auto;
 }
 
 .post-content h3 {
@@ -105,20 +125,33 @@
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+  font-size: 0.9rem;
+  color: #555;
 }
 
 .post-footer .like-button,
 .post-footer .action-button {
   cursor: pointer;
   color: #007bff;
+  transition: color 0.3s;
+}
+
+.post-footer .like-button:hover,
+.post-footer .action-button:hover {
+  color: #0056b3;
+}
+
+.deslike-button {
+  color: #dc3545;
+  transition: color 0.3s;
+}
+
+.deslike-button:hover {
+  color: #bd2130;
 }
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-app-logout {
-  margin-right: 10px;
 }

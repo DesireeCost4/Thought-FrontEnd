@@ -1,10 +1,13 @@
-<nav id="navbar" *ngIf="!isLoggedIn()" @fadeInOut>
+<nav id="navbar" *ngIf="!isLoggedIn" @fadeInOut>
   <ul>
-    <li *ngIf="!isLoggedIn()" @fadeInOut>
+    <li *ngIf="!isLoggedIn" @fadeInOut>
       <a routerLink="/login">Entrar</a>
     </li>
-    <li *ngIf="!isLoggedIn()" @fadeInOut>
+    <li *ngIf="!isLoggedIn" @fadeInOut>
       <a routerLink="/register">Cadastrar-se</a>
     </li>
   </ul>
 </nav>
+
+<div *ngIf="isLoggedIn">Bem-vindo!</div>
+

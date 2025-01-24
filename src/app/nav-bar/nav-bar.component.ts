@@ -25,7 +25,9 @@ import {
 export class NavBarComponent {
   constructor(private apiService: ApiService) {}
 
-  isLoggedIn(): boolean {
-    return this.apiService.checkAuthentication();
+  isLoggedIn: boolean = false;
+
+  ngOnInit() {
+    this.isLoggedIn = this.apiService.checkAuthentication(); 
   }
 }

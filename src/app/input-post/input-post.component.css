@@ -1,20 +1,16 @@
 .container {
-  background: linear-gradient(135deg, #121212, #444444);
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 form {
-  background: linear-gradient(135deg, #121212, #444444);
-  border: 1px solid #f2d335;
-
+  background: transparent;
+  border: 1px solid #fff;
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
@@ -27,7 +23,6 @@ form {
 textarea {
   width: 97%;
   padding: 10px;
-  border-radius: 5px;
   font-size: 16px;
   resize: none;
   background: transparent;
@@ -39,13 +34,13 @@ textarea:focus {
   border: none;
   outline: none;
   border-color: #f9ed32;
-  background: linear-gradient(135deg, #121212, #444444);
 }
 
 .btn-submit {
   padding: 10px 20px;
-  background: linear-gradient(45deg, #d4af37, #ffc700, #805a1a);
-  color: #000;
+  background-color: #007bff;
+  
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -53,7 +48,8 @@ textarea:focus {
 }
 
 .btn-submit:hover {
-  background: linear-gradient(45deg, #ffc700, #805a1a, #d4af37);
+  background-color: #0056b3;
+  color: #fff;
   transform: scale(1.05);
 }
 
@@ -82,7 +78,6 @@ textarea:focus {
   background-color: #f9ed32;
   color: #000;
   border: none;
-  border-radius: 25px;
   font-size: 1rem;
   cursor: pointer;
 }

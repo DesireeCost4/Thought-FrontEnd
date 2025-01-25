@@ -1,7 +1,5 @@
 .search-bar {
-  border-bottom: 1px solid #f2d335;
-  border-top: 1px solid #c69a1b;
-  border-radius: 100px;
+  border:1px solid #fff;
   height: 0rem;
   padding: 20px;
   align-items: center;

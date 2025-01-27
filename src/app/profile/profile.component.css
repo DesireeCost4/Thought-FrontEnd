@@ -1,8 +1,7 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Três colunas iguais */
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
-  
   background-color: #000;
   margin: 0;
 }
@@ -103,6 +102,7 @@ app-logout {
   font-weight: bold;
   margin-left: 10px;
 }
+
 
 .post-header .timestamp {
   color: #888;

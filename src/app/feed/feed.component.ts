@@ -69,7 +69,7 @@ export class FeedComponent implements OnInit {
             this.name = response.name;
             this.email = response.email;
             this.createdAt = response.createdAt;
-
+            
             this.cdr.detectChanges();
           },
 

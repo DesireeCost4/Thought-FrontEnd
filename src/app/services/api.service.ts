@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'https://toughtapi.onrender.com/';
+  private apiUrl = 'http://localhost:3000/';
 
   private feedDataSubject = new BehaviorSubject<any[]>([]); 
   feedData$ = this.feedDataSubject.asObservable();
@@ -40,13 +40,13 @@ export class ApiService {
     const token = localStorage.getItem('auth_token');
     if (token) {
       this.http
-        .get<any[]>('https://toughtapi.onrender.com/toughts/dashboard', {
+        .get<any[]>('http://localhost:3000/toughts/dashboard', {
           headers: { Authorization: `Bearer ${token}` },
         })
         .subscribe(
           (data) => {
             console.log('Feed atualizado com sucesso:', data);
-            this.feedDataSubject.next(data);  // Atualiza o feed
+            this.feedDataSubject.next(data);  
           },
           (error) => {
             console.error('Erro ao atualizar feed:', error);

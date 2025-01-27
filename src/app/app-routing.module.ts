@@ -7,6 +7,7 @@ import { LogoutComponent } from './logout/logout.component';
 
 import { authGuard } from './auth.guard';
 import { RegisterComponent } from './register/register.component';
+import { MessageComponent } from './message/message.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,8 +17,15 @@ const routes: Routes = [
 
   { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
   { path: 'feed', component: FeedComponent, canActivate: [authGuard] },
+
+
+  { path: 'messages/:userId', component: MessageComponent, canActivate: [authGuard]  },
+
+
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' },
+
+
 ];
 
 @NgModule({

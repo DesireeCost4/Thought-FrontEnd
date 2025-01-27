@@ -39,6 +39,7 @@ export class InputPostComponent {
         .subscribe(
           (response) => {
             console.log('Pensamento criado com sucesso:', response);
+            this.apiService.updateFeed()
             console.log(postData);
           },
           (error) => {

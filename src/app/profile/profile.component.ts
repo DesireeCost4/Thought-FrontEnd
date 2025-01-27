@@ -26,15 +26,31 @@ export class ProfileComponent {
   faComment = faComment;
   faSignOutAlt = faSignOutAlt;
 
+  userId: string | null = null;
+  
+
+
   toughts: Array<any> = [];
   name: string = '';
   email: string = '';
   createdAt: string = '';
 
+  token: string | null = localStorage.getItem('token');
+  
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.getDashboard();
+
+    if (this.token) {
+      console.log("Token:", this.token);
+      const decodedToken = JSON.parse(atob(this.token.split('.')[1]));
+      this.userId = decodedToken.userId; 
+
+      console.log(this.userId);
+
+    }
   }
 
   getDashboard(): void {
@@ -42,9 +58,10 @@ export class ProfileComponent {
 
 
     if (token) {
+      
       this.http
         .get<DashboardResponse>(
-          'https://toughtapi.onrender.com/toughts/profile',
+          'http://localhost:3000/toughts/profile',
           {
             headers: {
               Authorization: `Bearer ${token}`,

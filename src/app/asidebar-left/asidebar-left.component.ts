@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+
 
 import {
   faUser,
@@ -19,7 +21,9 @@ import { IconDefinition } from '@fortawesome/fontawesome-common-types';
   templateUrl: './asidebar-left.component.html',
   styleUrl: './asidebar-left.component.css',
 })
-export class AsidebarLeftComponent {
+export class AsidebarLeftComponent implements OnInit {
+
+  userId: string | undefined;
   //icons
   faHome = faHome;
   faHeart = faHeart;
@@ -33,11 +37,26 @@ export class AsidebarLeftComponent {
   email: string = '';
   createdAt: string = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.getDashboard();
+    const token = localStorage.getItem('auth_token');
+    if (token) {
+      try {
+        const decodedToken = JSON.parse(atob(token.split('.')[1]));
+        this.userId = decodedToken.userId;
+        console.log('userId:', this.userId);
+      } catch (error) {
+        console.error('Erro ao decodificar o token:', error);
+      }
+    } else {
+      console.warn('Token não encontrado');
+    }
   }
+  
+
+
 
   getDashboard(): void {
     const token = localStorage.getItem('auth_token');

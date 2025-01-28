@@ -12,34 +12,30 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 export class MessageComponent implements OnInit {
+
+  
   userId: string | undefined;
-  userName: string | undefined;
-  receivedMessages: any[] = [];
+  //messages: any[] = []; 
   toUser: string = '';  
   content: string = '';
- 
-   
- token = localStorage.getItem('auth_token');
- newMessage = {
-    
-  toUser: this.toUser,
-  content: this.content
-};
+  token = localStorage.getItem('auth_token');
+
+  newMessage = {
+    toUser: this.toUser,
+    content: this.content}
+
 
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
+    //this.getMessages(); 
     this.route.params.subscribe((params) => {
-      console.log('Parâmetros recebidos:', params); // Verifica todos os parâmetros
+      console.log('Parâmetros recebidos:', params); 
       this.userId = params['userId'];
-      console.log('UserId recebido da URL:', this.userId); // Mostra o userId
+      console.log('UserId recebido da URL:', this.userId); 
     });
   }
-
-  // Carregar dados do usuário e mensagens recebidas
- 
-
 
   async sendMessage() {
 
@@ -54,7 +50,9 @@ export class MessageComponent implements OnInit {
       content: this.content
       };
     //const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-  
+      
+    console.log('Dados da mensagem:', message);
+
     console.log(token)
 
     this.http.post(`http://localhost:3000/messages/${userId}`, message, { 
@@ -66,7 +64,11 @@ export class MessageComponent implements OnInit {
       response => console.log('Mensagem enviada', response),
       error => console.error('Erro ao enviar mensagem', error)
     );
-  }
-  
+    }
+    
+
 }
-  }
+
+
+
+}

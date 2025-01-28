@@ -1,7 +1,39 @@
-<form (ngSubmit)="sendMessage()">
-  <input type="text" [(ngModel)]="toUser" name="toUser" placeholder="Usuário" required>
-  <textarea [(ngModel)]="content" name="content" placeholder="Mensagem" required></textarea>
-  <button type="submit">Enviar</button>
-</form>
+<div class="grid-container">
+  <div class="grid-item sidebar">
+    <app-asidebar-left></app-asidebar-left>
+  </div>
 
+  <div class="grid-item content">
+    <form (ngSubmit)="sendMessage()">
+      <input
+        type="text"
+        [(ngModel)]="toUser"
+        name="toUser"
+        placeholder="Usuário"
+        required
+      />
+      <textarea
+        [(ngModel)]="content"
+        name="content"
+        placeholder="Recado"
+        required
+      ></textarea>
+      <button type="submit">Enviar</button>
+    </form>
 
+    <div *ngIf="messages.length > 0; else noMessages">
+      <h2>Página de Recados</h2>
+      <ul>
+        <li *ngFor="let message of messages">
+          <strong>De:</strong> {{ message.fromUser.name }}<br />
+          <strong>Mensagem:</strong> {{ message.content }}<br />
+          <strong>Enviado em:</strong> {{ message.createdAt | date: 'dd/MM/yyyy HH:mm' }}
+        </li>
+      </ul>
+    </div>
+
+    <ng-template #noMessages>
+      <p>Você ainda não tem mensagens.</p>
+    </ng-template>
+  </div>
+</div>

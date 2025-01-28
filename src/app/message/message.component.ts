@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-//import { User } from '../services'; 
 
 @Component({
   selector: 'app-message',
@@ -15,7 +14,7 @@ export class MessageComponent implements OnInit {
 
   
   userId: string | undefined;
-  //messages: any[] = []; 
+  messages: any[] = []; 
   toUser: string = '';  
   content: string = '';
   token = localStorage.getItem('auth_token');
@@ -29,11 +28,14 @@ export class MessageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
-    //this.getMessages(); 
     this.route.params.subscribe((params) => {
       console.log('Parâmetros recebidos:', params); 
       this.userId = params['userId'];
       console.log('UserId recebido da URL:', this.userId); 
+
+      if (this.userId) {
+        this.getMessages(); 
+      }
     });
   }
 
@@ -61,14 +63,36 @@ export class MessageComponent implements OnInit {
     'Content-Type': 'application/json'
   }})
     .subscribe(
-      response => console.log('Mensagem enviada', response),
+      
+      (response) => {console.log('Mensagem enviada', response)
+        this.content=''
+        this.toUser=''
+      },
+      
       error => console.error('Erro ao enviar mensagem', error)
+      
     );
     }
-    
-
 }
 
+getMessages() {
+  if (this.token && this.userId) {
+    const headers = {
+      Authorization: `Bearer ${this.token}`,
+      'Content-Type': 'application/json'
+    };
 
+    this.http.get<any[]>(`http://localhost:3000/messages/${this.userId}`, { headers })
+      .subscribe(
+        (response) => {
+          console.log('Mensagens recebidas:', response);
+          this.messages = response; 
+        },
+        (error) => {
+          console.error('Erro ao buscar mensagens:', error);
+        }
+      );
+  }
+}
 
 }

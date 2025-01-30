@@ -1,39 +1,46 @@
-<div class="grid-container">
-  <div class="grid-item sidebar">
-    <app-asidebar-left></app-asidebar-left>
+<div class="message-container">
+  <!-- Lista de Contatos -->
+  <div class="sidebar">
+    <h3>Contatos</h3>
+    <div class="contact-list">
+      <div 
+        *ngFor="let contact of contacts" 
+        (click)="selectContact(contact)" 
+        class="contact-item">
+        <img [src]="contact.photo" alt="Foto de {{ contact.name }}" class="contact-photo" />
+        <div>
+          <h4>{{ contact.name }}</h4>
+          <p>{{ contact.status }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="grid-item content">
-    <form (ngSubmit)="sendMessage()">
-      <input
-        type="text"
-        [(ngModel)]="toUser"
-        name="toUser"
-        placeholder="Usuário"
-        required
-      />
-      <textarea
-        [(ngModel)]="content"
-        name="content"
-        placeholder="Recado"
-        required
-      ></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-
-    <div *ngIf="messages.length > 0; else noMessages">
-      <h2>Página de Recados</h2>
-      <ul>
-        <li *ngFor="let message of messages">
-          <strong>De:</strong> {{ message.fromUser.name }}<br />
-          <strong>Mensagem:</strong> {{ message.content }}<br />
-          <strong>Enviado em:</strong> {{ message.createdAt | date: 'dd/MM/yyyy HH:mm' }}
-        </li>
-      </ul>
+  <!-- Janela de Chat -->
+  <div class="chat-window" *ngIf="selectedContact">
+    <div class="chat-header">
+      <img [src]="selectedContact.photo" alt="Foto de {{ selectedContact.name }}" class="user-photo" />
+      <h4>{{ selectedContact.name }}</h4>
     </div>
 
-    <ng-template #noMessages>
-      <p>Você ainda não tem mensagens.</p>
-    </ng-template>
-  </div>
-</div>
+    <!-- Mensagens -->
+    <div class="messages">
+      <div *ngFor="let message of messages" 
+           [ngClass]="{'sent': message.fromUser === userId, 'received': message.toUser === userId}">
+        <div class="message-content">
+          <p>{{ message.content }}</p>
+          <span class="timestamp">{{ message.createdAt | date:'short' }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campo de Resposta -->
+    <div class="message-input">
+      <input 
+        type="text" 
+        [(ngModel)]="content" 
+        (keydown.enter)="sendMessage()"
+        placeholder="Digite sua mensagem..." />
+      <button (click)="sendMessage()">Enviar</button>
+    </div>
+ 

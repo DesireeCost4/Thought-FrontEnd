@@ -1,0 +1,67 @@
+<div class="friendship-container">
+
+
+
+    <div class="search-container">
+        <input
+          type="text"
+          placeholder="Buscar amigos..."
+          [(ngModel)]="searchQuery"
+          (input)="searchUsers()"
+        />
+      </div>
+
+      <p *ngIf="searchQuery.length > 0 && users.length === 0">
+        Nenhum usuário encontrado.
+      </p>
+
+
+      <ul>
+        <li *ngFor="let user of users">
+          {{ user.name }}
+          <button (click)="viewUserProfile(user.name)">Ver Perfil</button>
+        </li>
+      </ul>
+      
+
+  
+
+
+    <h2>Meus Amigos</h2>
+    <div *ngIf="friends.length > 0; else noFriends">
+      <ul class="user-grid">
+        <div *ngFor="let friend of friends">
+          <a (click)="viewUserProfile(friend.name)" [routerLink]="['/profile', friend.name]">
+            {{ friend.name }}
+          </a>
+        </div>
+      </ul>
+    </div>
+
+
+
+    
+    <ng-template #noFriends>
+      <p>Você não tem amigos ainda.</p>
+    </ng-template>
+  
+    
+  
+    <ng-template #noSuggestions>
+      <p>Sem sugestões no momento.</p>
+    </ng-template>
+  
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+
+   
+      
+
+    
+  </div>
+
+
+  
+  

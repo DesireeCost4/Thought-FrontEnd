@@ -95,4 +95,12 @@ export class ApiService {
 
     return this.http.get(`http://localhost:3000/toughts`, { headers, params });
   }
+
+  searchUsers(query: string): Observable<any[]> {
+    return this.http.get<any[]>(`http://localhost:3000/users/search?search=${query}`);
+  }
+
+  getUserProfile(username: string): Observable<any> {
+    return this.http.get<any>(`http://localhost:3000/users/search?search=${username}`);
+  }
 }

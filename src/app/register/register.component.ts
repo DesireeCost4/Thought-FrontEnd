@@ -12,11 +12,13 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
   user = {
     name: '',
+    username: '',
     email: '',
     password: '',
     confirmpassword: '',
   };
 
+  isLoading: boolean = false;
   errorMessage: string = '';
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -24,10 +26,26 @@ export class RegisterComponent {
   onSubmit() {
     console.log(this.user);
 
+
+    if (!this.user.name || !this.user.username || !this.user.email || !this.user.password || !this.user.confirmpassword) {
+      this.errorMessage = 'Todos os campos são obrigatórios.';
+      return;
+    }
+    
+
     if (this.user.password !== this.user.confirmpassword) {
       this.errorMessage = 'As senhas não coincidem.';
       return;
     }
+
+    const usernameRegex = /^[a-zA-Z0-9_.-]+$/;
+    if (!usernameRegex.test(this.user.username)) {
+      this.errorMessage = 'O nome de usuário só pode conter letras, números, "_" ou "."';
+      return;
+    }
+
+    this.isLoading = true;
+    this.errorMessage = '';
 
     this.http
       .post('https://toughtapi.onrender.com/auth/register', this.user)
@@ -39,6 +57,7 @@ export class RegisterComponent {
         (error) => {
           console.error('Erro ao cadastrar!', error);
           this.errorMessage = error.error ? error.error : 'Erro desconhecido';
+          this.isLoading = false;
         }
       );
   }

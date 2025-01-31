@@ -1,0 +1,32 @@
+<div class="profile-container">
+    <!-- Coluna 1: Foto do usuário -->
+    <div class="profile-picture">
+      <img src="https://via.placeholder.com/150" alt="Foto de Perfil" />
+
+      <div class="profile-info">
+        <h2>{{ user.name }}</h2>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Desde:</strong> {{ user.createdAt  }}</p>
+      </div>
+    </div>
+  
+    
+    
+  
+
+    <div class="segunda-coluna">
+      
+      <h3>Toughts</h3>
+      <ul>
+        <li *ngFor="let tought of toughts">
+          {{ tought }}
+        </li>
+      </ul>
+    </div>
+
+    
+    <div class="profile-extra">
+      
+    </div>
+  </div>
+  

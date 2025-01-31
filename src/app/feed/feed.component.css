@@ -12,12 +12,26 @@
 .first-colum,
 .third-column {
   background-color: #000;
-  border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
+  border: 1px solid #fff;
+
 }
 
+
+
 .first-colum{}
+
+.third-column {
+ 
+  text-align: center;
+
+}
+
+.app-friendship-list{
+  border: 1px solid red;
+}
+
 
 .input-post{
   margin-bottom: 20px;

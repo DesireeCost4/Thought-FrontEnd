@@ -13,6 +13,22 @@
     </div>
 
     <div class="input-group">
+      <label for="username">Nome de usuário: </label>
+      <input
+        type="text"
+        name="username"
+        [(ngModel)]="user.username"
+        placeholder="Escolha um nome de usuário"
+        required
+        pattern="^[a-zA-Z0-9_.-]+$"
+        title="O nome de usuário só pode conter letras, números, '_' ou '.'"
+      />
+      <small *ngIf="registerForm.controls['username']?.invalid && registerForm.controls['username']?.touched">
+        Nome de usuário inválido.
+      </small>
+    </div>
+
+    <div class="input-group">
       <label for="email">E-mail: </label>
       <input
         type="email"

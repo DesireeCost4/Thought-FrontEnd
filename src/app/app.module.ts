@@ -21,6 +21,9 @@ import { SearchComponent } from './search/search.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { MessageComponent } from './message/message.component';
+import { FriendshipComponent } from './friendship/friendship.component';
+import { FriendshipListComponent } from './friendship-list/friendship-list.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -37,6 +40,9 @@ import { MessageComponent } from './message/message.component';
     AsidebarLeftComponent,
     SearchComponent,
     MessageComponent,
+    FriendshipListComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -47,9 +53,9 @@ import { MessageComponent } from './message/message.component';
     RouterModule.forRoot([]),
     BrowserAnimationsModule,
     FontAwesomeModule,
-    YouTubePlayerModule
-
-  ],
+    YouTubePlayerModule,
+    FriendshipComponent
+],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class ApiService {
+ 
   private apiUrl = 'http://localhost:3000/';
 
   private feedDataSubject = new BehaviorSubject<any[]>([]); 
@@ -96,6 +97,12 @@ export class ApiService {
     return this.http.get(`http://localhost:3000/toughts`, { headers, params });
   }
 
+ 
+  getToughtById(id: string): Observable<any> {
+    return this.http.get<any>(`http://localhost:3000/toughts/${id}`);
+  }
+
+
   searchUsers(query: string): Observable<any[]> {
     return this.http.get<any[]>(`http://localhost:3000/users/search?search=${query}`);
   }
@@ -103,4 +110,20 @@ export class ApiService {
   getUserProfile(username: string): Observable<any> {
     return this.http.get<any>(`http://localhost:3000/users/search?search=${username}`);
   }
+
+  
+  removeFriend(username: string): Observable<any> {
+    return this.http.delete<any>(`http://localhost:3000/friends/${username}`, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    });
+  }
+
+
+  
+
+
+ 
+ 
 }

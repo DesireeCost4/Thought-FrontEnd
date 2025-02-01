@@ -18,16 +18,16 @@
 
       <ul>
         <li *ngFor="let user of users">
-          {{ user.name }}
-          <button (click)="viewUserProfile(user.name)">Ver Perfil</button>
+          <a (click)="viewUserProfile(user.name)" class="profile-link">{{ user.name }}</a>
         </li>
       </ul>
       
 
-  
+    </div>
 
-
+    <div class="friends">
     <h2>Meus Amigos</h2>
+
     <div *ngIf="friends.length > 0; else noFriends">
       <ul class="user-grid">
         <div *ngFor="let friend of friends">
@@ -38,14 +38,13 @@
       </ul>
     </div>
 
-
-
-    
     <ng-template #noFriends>
       <p>Você não tem amigos ainda.</p>
     </ng-template>
   
-    
+
+  </div>
+
   
     <ng-template #noSuggestions>
       <p>Sem sugestões no momento.</p>
@@ -57,10 +56,9 @@
 
 
    
-      
 
     
-  </div>
+
 
 
   

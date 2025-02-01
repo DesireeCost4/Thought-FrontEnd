@@ -41,6 +41,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     SearchComponent,
     MessageComponent,
     FriendshipListComponent,
+    UserProfileComponent
     
     
   ],

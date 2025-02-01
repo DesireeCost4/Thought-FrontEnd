@@ -1,12 +1,17 @@
 <div class="profile-container">
     <!-- Coluna 1: Foto do usuário -->
     <div class="profile-picture">
-      <img src="https://via.placeholder.com/150" alt="Foto de Perfil" />
+
 
       <div class="profile-info">
+        <img src="icons8-nome-48.png" alt="Avatar" />
         <h2>{{ user.name }}</h2>
         <p><strong>Email:</strong> {{ user.email }}</p>
         <p><strong>Desde:</strong> {{ user.createdAt  }}</p>
+
+        <button class="add-friend-btn" (click)="addFriend()">Adicionar Amigo</button>
+
+        
       </div>
     </div>
   
@@ -15,18 +20,32 @@
   
 
     <div class="segunda-coluna">
-      
-      <h3>Toughts</h3>
-      <ul>
-        <li *ngFor="let tought of toughts">
-          {{ tought }}
-        </li>
-      </ul>
+    
+      <h1>Mural de pensamentos</h1>
+
+
+    <div class="post-container">
+      <div *ngFor="let tought of toughts" class="post">
+        <div class="post-header">
+          <img src="icons8-nome-48.png" alt="Avatar" />
+          <p>{{user.name}}</p> 
+        </div>
+        
+        <div class="post-content">
+          <h3>{{ tought.title }}</h3>
+          <p>{{ tought.content }}</p>
+        </div>
+      </div>
     </div>
 
-    
+  
+  
+
     <div class="profile-extra">
       
     </div>
   </div>
+  
+
+
   

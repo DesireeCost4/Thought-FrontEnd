@@ -21,6 +21,15 @@ export class ApiService {
     return localStorage.getItem('token') || '';
   }
 
+  getUserIdFromToken(): string {
+    const token = this.getToken();
+    if (token) {
+      const decodedToken = JSON.parse(atob(token.split('.')[1])); 
+      return decodedToken.userId; 
+    }
+    return '';  
+  }
+
   isLoggedIn(): boolean {
     return !!this.getToken();
   }
@@ -119,6 +128,8 @@ export class ApiService {
       }),
     });
   }
+
+  
 
 
   

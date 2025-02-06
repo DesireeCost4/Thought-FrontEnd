@@ -24,6 +24,7 @@ import { MessageComponent } from './message/message.component';
 import { FriendshipComponent } from './friendship/friendship.component';
 import { FriendshipListComponent } from './friendship-list/friendship-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { RequestFriendComponent } from './request-friend/request-friend.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     SearchComponent,
     MessageComponent,
     FriendshipListComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    RequestFriendComponent
     
     
   ],

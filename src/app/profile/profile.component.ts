@@ -35,12 +35,21 @@ export class ProfileComponent {
   email: string = '';
   createdAt: string = '';
 
+
   token: string | null = localStorage.getItem('token');
   
 
   constructor(private http: HttpClient) {}
 
+ 
+  
+
   ngOnInit(): void {
+
+
+   
+
+
     this.getDashboard();
 
     if (this.token) {

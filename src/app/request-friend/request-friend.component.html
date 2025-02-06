@@ -1,0 +1,15 @@
+<body>
+
+<button (click)="toggleRequests()">
+    <i class="fas fa-user-friends"></i> Solicitações de Amizade
+  </button>
+  
+  <h4 *ngIf="showRequests">Solicitações Pendentes</h4>
+  <ul *ngIf="showRequests && pendingRequests.length > 0">
+    <li *ngFor="let request of pendingRequests">
+      <p>{{ request.user1.name }}</p>
+
+      <button (click)="acceptRequest(request._id)">Aceitar</button>
+    </li>
+  </ul>
+</body>

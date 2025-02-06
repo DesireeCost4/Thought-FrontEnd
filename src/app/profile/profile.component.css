@@ -17,6 +17,11 @@
   
 }
 
+.app-request{
+ padding: 10px;
+  border: 1px solid #fff;
+}
+
 .profile-header img {
   width: 100px;
   height: 100px;
@@ -41,21 +46,29 @@
 }
 
 .list-options {
-  list-style: none;
+  display: flex;
   padding: 0;
   margin: 0;
 }
 
 .list-options li {
-  margin-bottom: 10px;
-  align-items: center;
+  display: flex;
+  justify-content:space-around;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 100%;
   padding: 10px;
+  width: 5rem
+
 }
 
 .list-options a {
+  flex-direction: column;
+  padding: 10px;
   text-decoration: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 15px;
   display: flex;
   align-items: center;
 }
@@ -71,6 +84,7 @@
 }
 
 app-logout {
+ 
   margin-right: 10px;
 }
 

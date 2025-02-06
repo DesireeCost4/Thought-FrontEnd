@@ -23,6 +23,13 @@
         </a>
       </li>
 
+      
+
+      
+
+
+
+
       <li>
         <a [routerLink]="['/messages', userId]">
         <a> <fa-icon [icon]="faCommentAlt"></fa-icon> Recados </a>
@@ -35,7 +42,13 @@
       </li>
 
       <li><app-logout></app-logout></li>
+
     </ul>
+
+  <div class="app-request">
+      <app-request-friend></app-request-friend>
+  </div>
+
   </div>
 
   
@@ -71,6 +84,7 @@
 
 <div class="frendship-container">
   <app-friendship-list></app-friendship-list>
+
  
 </div>
 

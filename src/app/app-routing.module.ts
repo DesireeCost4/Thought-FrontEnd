@@ -23,6 +23,7 @@ const routes: Routes = [
 
   { path: 'messages/:userId', component: MessageComponent, canActivate: [authGuard]  },
   { path: 'profile/:username', component: UserProfileComponent },
+  
 
 
   { path: '', redirectTo: '/login', pathMatch: 'full' },

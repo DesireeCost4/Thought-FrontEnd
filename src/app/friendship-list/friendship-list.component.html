@@ -28,19 +28,21 @@
     <div class="friends">
     <h2>Meus Amigos</h2>
 
-    <div *ngIf="friends.length > 0; else noFriends">
-      <ul class="user-grid">
-        <div *ngFor="let friend of friends">
-          <a (click)="viewUserProfile(friend.name)" [routerLink]="['/profile', friend.name]">
-            {{ friend.name }}
-          </a>
-        </div>
+
+
+
+    <div *ngFor="let user of friends">
+      <h3>{{ user.userName }}'s Friends:</h3>
+      <ul>
+        <li *ngFor="let friend of user.friendsList">
+          {{ friend }}
+        </li>
       </ul>
     </div>
 
-    <ng-template #noFriends>
-      <p>Você não tem amigos ainda.</p>
-    </ng-template>
+<div *ngIf="!friends || friends.length === 0">
+  <p>Você ainda não tem amigos.</p>
+</div>
   
 
   </div>

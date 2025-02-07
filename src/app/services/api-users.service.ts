@@ -23,13 +23,14 @@ export class ApiUsersService {
 
 
 
-  getFriends(): Observable<any> {
+  getFriends(userId: string ): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('token')}`  // Usando token do localStorage
+      'Authorization': `Bearer ${localStorage.getItem('token')}`  
     });
-
-    return this.http.get<any>(`${this.apiUrl}/users/friends`, { headers });
+  
+    return this.http.get<any>(`${this.apiUrl}/users/friends/${userId}`, { headers });
   }
+  
 
 }

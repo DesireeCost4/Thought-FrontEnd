@@ -4,7 +4,7 @@
     <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
     <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
   
-    <!-- Botão para adicionar ou remover amigo -->
+    
     <button *ngIf="username && username !== 'usuarioLogado'" (click)="addOrRemoveFriend()" [disabled]="!username">
       {{ isFriend ? 'Remover Amigo' : 'Adicionar Amigo' }}
     </button>

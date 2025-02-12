@@ -18,14 +18,20 @@ export class FriendshipListComponent implements OnInit {
   username: string = ''
   searchQuery: string = '';
   users: any[] = [];
-  userId: string | null = null;
+  userId: string = '';
 
 
   constructor(private http: HttpClient, private ApiService: ApiService, private router: Router, private ApiUsersService: ApiUsersService) { }
 
   ngOnInit(): void {
-    const userId = localStorage.getItem('userId');
-    console.log(userId)
+    this.userId = this.ApiService.getUserIdFromToken();
+    console.log('UserId do token:', this.userId);
+  
+    if (!this.userId) {
+      console.error('Erro: userId não encontrado no localStorage.');
+      return;
+    }
+  
     this.loadSuggestions();
     this.loadFriends();
 
@@ -34,28 +40,31 @@ export class FriendshipListComponent implements OnInit {
 
 
   loadFriends() {
-    
     if (!this.userId) {
-      console.error('Erro: userId não encontrado no localStorage.');
+      console.error('Erro: userId não encontrado.');
       return;
     }
-
-
-      this.ApiUsersService.getFriends(this.userId).subscribe({
-        next: (data) => {
-          console.log('Usuários com amigos populados: ', data);
-          
-          this.friends = data.map((user: any) => ({
-            userName: user.name,
-            friendsList: user.friends.map((friend: any) => friend.name) // Pega o nome dos amigos
-          }));
-          console.log('Usuários e seus amigos: ', this.friends);
-        },
-        error: (err) => {
-          console.error('Erro ao buscar usuários:', err);
-        }
-      });
-    }
+  
+    this.http.get<any>(`http://localhost:3000/users/friends/${this.userId}`).subscribe({
+      next: (data) => {
+        console.log('Usuário com amigos populados:', data);
+  
+        this.friends = [
+          {
+            userName: data.userName,
+            friendsList: data.friendsList.map((friend: any) => friend.name),
+          }
+        ];
+  
+        console.log('Usuários e seus amigos:', this.friends);
+      },
+      error: (err) => {
+        console.error('Erro ao buscar usuários:', err);
+      }
+    });
+  }
+  
+  
     
   
 

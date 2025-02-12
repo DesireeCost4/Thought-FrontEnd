@@ -29,6 +29,7 @@ export class ApiUsersService {
       'Authorization': `Bearer ${localStorage.getItem('token')}`  
     });
   
+    console.log(userId)
     return this.http.get<any>(`${this.apiUrl}/users/friends/${userId}`, { headers });
   }
   

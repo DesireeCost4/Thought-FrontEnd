@@ -26,26 +26,27 @@
     </div>
 
     <div class="friends">
-    <h2>Meus Amigos</h2>
+     
+    
+      <div *ngIf="friends.length > 0; else noFriends">
+        <div *ngFor="let user of friends" class="friend-card">
+          <h3>Lista de amigos: </h3>
+          <ul>
+            <li *ngFor="let friend of user.friendsList">
+              {{ friend }}
+            </li>
 
 
-
-
-    <div *ngFor="let user of friends">
-      <h3>{{ user.userName }}'s Friends:</h3>
-      <ul>
-        <li *ngFor="let friend of user.friendsList">
-          {{ friend }}
-        </li>
-      </ul>
+           
+          </ul>
+        </div>
+      </div>
+    
+      <ng-template #noFriends>
+        <p>Você ainda não tem amigos.</p>
+      </ng-template>
     </div>
-
-<div *ngIf="!friends || friends.length === 0">
-  <p>Você ainda não tem amigos.</p>
-</div>
-  
-
-  </div>
+    
 
   
     <ng-template #noSuggestions>

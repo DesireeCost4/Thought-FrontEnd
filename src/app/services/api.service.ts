@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
-import { Router } from '@angular/router';
 
 
 @Injectable({

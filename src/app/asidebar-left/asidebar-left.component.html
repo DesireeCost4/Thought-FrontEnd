@@ -1,4 +1,5 @@
 <div class="profile-header">
+
   <img src="icons8-nome-48.png" alt="Avatar" />
 
   <h1>
@@ -6,13 +7,14 @@
     {{ name }}
   </h1>
 
-
+<div class="options-feed">
   <ul class="list-options">
     <li>
       <a [routerLink]="['/feed']">
         <fa-icon [icon]="faHome"></fa-icon> Home
       </a>
     </li>
+    
 
     <li>
       <a [routerLink]="['/profile']">
@@ -20,6 +22,12 @@
       </a>
     </li>
 
+  </ul>
+</div>
+
+
+<div class="options-feed">
+  <ul class=" list-options">
     <li>
       <a [routerLink]="['/messages', userId]">
       <a> <fa-icon [icon]="faCommentAlt"></fa-icon> Recados </a>
@@ -30,7 +38,10 @@
     </li>
 
 
-    <li><app-logout></app-logout></li>
+   
   </ul>
+</div>
+
+<app-logout></app-logout>
 </div>
 

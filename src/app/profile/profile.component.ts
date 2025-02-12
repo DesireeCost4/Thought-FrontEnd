@@ -7,6 +7,7 @@ import {
   faCommentAlt,
   faHome,
   faHeart,
+  faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
@@ -25,6 +26,7 @@ export class ProfileComponent {
   faUser = faUser;
   faComment = faComment;
   faSignOutAlt = faSignOutAlt;
+  faUserPlus = faUserPlus;
 
   userId: string | null = null;
   

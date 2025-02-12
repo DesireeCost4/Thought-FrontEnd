@@ -1,44 +1,47 @@
+body{  background-color: transparent;
 
+}
 
 button {
   background-color: transparent; 
-  color: #fff; 
-  border: 1px solid #fff; 
-  padding: 10px 20px; 
+  color: #000a42; 
   font-size: 16px; 
   cursor: pointer;
   transition: background-color 0.3s ease; 
+  border: none; 
+  outline: none; 
 }
 
 button:hover {
-  color: #000;
-  background: linear-gradient(45deg, #d4af37, #ffc700, #805a1a);
+  
 
 }
 
 button i {
   margin-right: 8px;
+  background-color: transparent;
+
 }
 
 
 h2 {
-  font-size: 24px;
   color: #fff; 
   margin-top: 20px; 
   margin-bottom: 10px; 
-  font-weight: bold; 
 }
 
 
 ul {
   color: #fff;
+  background-color: transparent;
+
   list-style-type: none; 
   padding: 0; 
   margin: 0; 
 }
 
 li {
-  background-color: transparent; 
+  background-color: transparent;
   border: 1px solid #ddd; 
   padding: 10px; 
   margin-bottom: 10px; 
@@ -51,4 +54,6 @@ li:hover {
 li p {
   margin: 0; 
   font-size: 16px;
+  background-color: transparent;
+
 }

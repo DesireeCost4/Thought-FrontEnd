@@ -7,13 +7,13 @@
 }
 
 form {
+  border-radius: 10px;
+
   background: transparent;
-  border: 1px solid #fff;
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .input-group {
@@ -26,14 +26,13 @@ textarea {
   font-size: 16px;
   resize: none;
   background: transparent;
-  color: #fcfcfc;
+  color: #000a42;
   border: none;
 }
 
 textarea:focus {
   border: none;
   outline: none;
-  border-color: #f9ed32;
 }
 
 .btn-submit {
@@ -61,6 +60,7 @@ textarea:focus {
 .container .input-group {
   display: flex;
   gap: 0.5rem;
+  
 }
 
 .container input[type="text"] {

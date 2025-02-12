@@ -5,13 +5,14 @@
   grid-template-columns: 1fr 1fr 1fr; /* Três colunas iguais */
   gap: 10px;
   padding: 0px;
-  background-color: #000;
+  background: linear-gradient(to right, #b4c1c6, #a2b6c3, #7d9aad);
   margin: 0;
+  color: #000a42;
 }
 
 .first-colum,
 .third-column {
-  background-color: #000;
+  background: linear-gradient(to right, #b4c1c6, #a2b6c3, #7d9aad);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
   border: 1px solid #fff;
@@ -35,9 +36,14 @@
 
 .input-post{
   margin-bottom: 20px;
+  background: #fcfcfc;
+  color: #000a42;
+border-radius: 10px;
+
 }
 
 .container {
+  
   background-color: transparent;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -45,12 +51,13 @@
 }
 
 .post {
-  background-color: #000;
-  color: #fff;
+  background: #fcfcfc;
+  color: #000a42;
   margin-bottom: 15px;
   padding: 15px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #fff;
+  border-radius: 10px;
 }
 
 .post-header {
@@ -71,7 +78,7 @@
 
 .post-header .username {
   font-weight: bold;
-  color: #fff;
+  color: #000a42;
 }
 
 .username{

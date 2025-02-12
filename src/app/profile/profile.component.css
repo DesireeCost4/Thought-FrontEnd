@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
-  background-color: #000;
+  background: linear-gradient(to right, #b4c1c6, #a2b6c3, #7d9aad);
   margin: 0;
   height: 100vh;
 }
@@ -19,7 +19,7 @@
 
 .app-request{
  padding: 10px;
-  border: 1px solid #fff;
+  border: 1px solid #fdfdfb;
 }
 
 .profile-header img {
@@ -27,54 +27,69 @@
   height: 100px;
   border-radius: 50%;
   margin-bottom: 15px;
+  border: 3px solid #fdfdfb;
+
 }
 
 .profile-header h1 {
+  text-align: center;
   font-size: 24px;
   margin: 0 0 10px;
-  color: #fff;
+  border-radius: 10px;
+  color: #000a42;
 }
 
 .profile-header p {
   margin: 0 0 10px;
-  color: #fff;
+  border-radius: 10px;
+  color: #000a42;
 }
 
 .profile-header p:hover {
   color: #000;
-  background-color: #c69a1b;
+  background: linear-gradient(to right, #b4c1c6, #a2b6c3, #7d9aad);
+
 }
 
 .list-options {
   display: flex;
-  padding: 0;
+  padding: 10px;
   margin: 0;
+  background-color: #fcfcfc;
+  border-radius: 10px;
+  color: #000a42;
+  margin-top: 50px;
 }
 
 .list-options li {
   display: flex;
   justify-content:space-around;
-  justify-content: center;
-  text-align: center;
   flex-direction: column;
+  margin-left: 5px;
+  
   border-radius: 100%;
   padding: 10px;
-  width: 5rem
+  width: 5rem;
+  text-align: center;
+  align-items: center;
+  
 
 }
 
 .list-options a {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
   flex-direction: column;
-  padding: 10px;
   text-decoration: none;
-  color: #fff;
   font-size: 15px;
   display: flex;
-  align-items: center;
+  color: #000a42;
 }
 
 .list-options a:hover {
-  background: linear-gradient(45deg, #d4af37, #ffc700, #805a1a);
+  background: linear-gradient(to right, #b4c1c6, #a2b6c3, #7d9aad);
   color: #000;
   border-radius: 100px;
 }
@@ -90,12 +105,13 @@ app-logout {
 
 
 .tought-block {
-  background-color: #000;
-  color: #fff;
+  background-color:#fdfdfb ;
+  color: #000a42;
   margin-bottom: 15px;
   padding: 15px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #fff;
+  border-radius: 10px;
 }
 
 .post-header {
@@ -127,7 +143,7 @@ app-logout {
 .post-content h3 {
   margin: 0;
   font-size: 20px;
-  color: #fff;
+  color: #000a42;
 }
 
 .post-footer {
@@ -163,10 +179,25 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
 }
 
 
 .frendship-container{
-  border:1px solid #fff;
   text-align: center;
+  border: 1px solid #fff;
+  
+}
+
+app-logout{
+  margin-top: 50px;
 }

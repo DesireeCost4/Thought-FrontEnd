@@ -4,7 +4,7 @@
   padding: 20px;
   align-items: center;
   background-color: transparent;
-
+  
   text-align: center;
   font-size: 16px;
   color: #fcfcfc;
@@ -20,23 +20,10 @@
 .search-bar:focus {
   outline: none;
   background-color: transparent;
-  border-color: #f2d335;
 }
 
-.btn-submit {
-  padding: 5px;
-  background-color: #f9ed32;
-  color: #000;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
-.btn-submit:hover {
-  background-color: #f2d335;
-  transform: scale(1.02);
-  transition: all 0.3s ease;
-}
+
 
 .no-results {
   text-align: center;
@@ -47,45 +34,49 @@
 
 .results {
   margin-top: 20px;
+  
 }
 
 .results h2 {
   font-size: 1.5rem;
-  color: #fff;
-  border-bottom: 2px solid #f9ed32;
+  color: #000a42;
   padding-bottom: 5px;
 }
 
 .tought-list {
+
   list-style-type: none;
   padding: 0;
   margin: 0;
+
 }
 
 .tought-item {
+
   border-radius: 8px;
+  background-color: #fff;
   margin: 10px 0;
   padding: 15px;
   transition: background-color 0.3s;
 }
 
 .tought-item:hover {
-  background: linear-gradient(135deg, #121212, #444444);
+  transform: scale(1.05);
 }
 
 .tought-title {
   font-size: 1.2rem;
-  color: #fff;
+  color: #000a42;
 }
 
 .tought-author {
   display: block;
   margin-top: 5px;
   font-size: 0.9rem;
-  color: #c69a1b;
+  color: #000a42;
 }
 
 .profile-a {
   text-decoration: none;
-  color: #f9ed32;
+  color: #0030b6;
 }

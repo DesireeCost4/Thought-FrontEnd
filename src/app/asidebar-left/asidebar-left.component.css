@@ -13,43 +13,63 @@
   height: 100px;
   border-radius: 50%;
   margin-bottom: 15px;
+  border: 3px solid #fcfcfc;
 }
 
 .profile-header h1 {
   font-size: 24px;
   margin: 0 0 10px;
-  color: #fff;
+  color: #000a42;
 }
 
 .list-options {
+  display: flex;
+  background-color: #fcfcfc;
   list-style: none; 
   padding: 0; 
   margin: 0; 
+  border-radius: 10px;
 }
 
 .list-options li {
   margin-bottom: 10px;
   align-items: center;
   padding: 10px;
+  display: flex;
+  color: #000a42;
+
 }
 
 .list-options a {
+
   text-decoration: none;
-  color: #fff;
-  font-size: 18px;
+  font-size: 16px;
+  color: #000a42;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .list-options a:hover {
-  background: linear-gradient(45deg, #d4af37, #ffc700, #805a1a);
+  background: linear-gradient(to right, #b4c1c6, #a2b6c3, #7d9aad);
   color: #000;
-  border-radius: 100px;
+  
 
 
 }
 
 .list-options fa-icon {
   margin-right: 8px; 
+}
+
+
+.options-feed{
+  margin-top: 50px;
+  display: flex;
+  text-align: center;
+}
+
+app-logout{
+  margin-top: 50px;
 }

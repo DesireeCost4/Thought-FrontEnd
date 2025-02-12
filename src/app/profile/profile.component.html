@@ -7,9 +7,12 @@
       <br />
       {{ name }}
     </h1>
+
+   
     <p class="email">Email: {{ email }}</p>
     <p class="date">Membro desde: {{ createdAt | date : "dd/MM/yyyy" }}</p>
 
+    <div class="container-options">
     <ul class="list-options">
       <li>
         <a [routerLink]="['/feed']">
@@ -23,13 +26,13 @@
         </a>
       </li>
 
+    </ul>
+    </div>
       
 
-      
 
-
-
-
+  <div class="container-options">
+    <ul class="list-options">
       <li>
         <a [routerLink]="['/messages', userId]">
         <a> <fa-icon [icon]="faCommentAlt"></fa-icon> Recados </a>
@@ -41,14 +44,15 @@
         <a> <fa-icon [icon]="faCommentAlt"></fa-icon> Depoimentos </a>
       </li>
 
-      <li><app-logout></app-logout></li>
+      <li class="btn"><fa-icon [icon]="faUserPlus"></fa-icon> <app-request-friend></app-request-friend>
+      </li>
 
     </ul>
 
-  <div class="app-request">
-      <app-request-friend></app-request-friend>
   </div>
 
+  
+  <app-logout></app-logout>
   </div>
 
   

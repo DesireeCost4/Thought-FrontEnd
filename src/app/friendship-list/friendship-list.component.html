@@ -33,7 +33,9 @@
           <h3>Lista de amigos: </h3>
           <ul>
             <li *ngFor="let friend of user.friendsList">
-              {{ friend }}
+
+              <a (click)="viewUserProfile(friend)" class="profile-link">{{ friend }}</a>
+
             </li>
 
 
